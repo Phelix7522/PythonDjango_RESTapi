@@ -1,0 +1,32 @@
+DjangoMySQL_CRUD Notes
+
+-python -m venv myvenv
+-myvenv\Scripts\activate (to deactivate > deactive)(to delete > {rm -r venv,pipenv --rm})
+-pip install django
+-pip install djangorestframework
+-pip install django-cors-headers
+-django-admin startproject DjangoMysqlCRUD (Create Project)
+-python manage.py runserver (run project)
+-python manage.py startapp Employee (Create App)
+
+-Register app and require modules in project's settings.py
+-Create models in app's models.py
+
+-pip install pymsql (to connect mysql database)
+
+-Add database connection in project's settings.py
+
+-python manage.py makemigrations Employee (Create the tables from models)
+-python manage.py migrate Employee (To push the changes to the Database)
+
+-Insert mock data to Tables
+INSERT INTO employee_departments VALUES (2,'Support');
+INSERT INTO employee_employees VALUES (2,'KKK','IT','2022-12-08','anonymous.png');
+
+-Create serializers.py for all models
+(Serializer basically help to convert the complex type of models into native python data types,
+can then be easily render the json or xml and other content types)
+
+-Create API methods in app's views.py
+-Create urls.py in App
+-Include this urls.py in Main Project's urls.py
